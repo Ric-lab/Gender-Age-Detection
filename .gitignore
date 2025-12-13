@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+.venv
+venv/
+ENV/
+
+# Project Specific
+data/
+# models/gender_age_model.h5 # Comentei para permitir subir o modelo (se <100MB)
+# Se o modelo for maior que 100MB, descomente a linha acima
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
+*.log
+debug_log.txt
