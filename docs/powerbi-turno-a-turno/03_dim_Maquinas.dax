@@ -1,0 +1,100 @@
+dim_Maquinas =
+UNION(
+    -- PSD - Ear Plug
+    ROW("Area","PSD","Area_Sort",1,"Setor","Ear Plug","Setor_Sort",1,"Grupo","Ear Plug","Grupo_Sort",1,"Maquina","MKEAR1","Maq_Sort",1),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Ear Plug","Setor_Sort",1,"Grupo","Ear Plug","Grupo_Sort",1,"Maquina","MKEAR2","Maq_Sort",2),
+
+    -- PSD - FABRIMA13  (unidades; total 'pai' do BD ignorado, usamos filhos)
+    ROW("Area","PSD","Area_Sort",1,"Setor","FABRIMA13","Setor_Sort",2,"Grupo","FABRIMA13","Grupo_Sort",1,"Maquina","FABR13_A","Maq_Sort",1),
+    ROW("Area","PSD","Area_Sort",1,"Setor","FABRIMA13","Setor_Sort",2,"Grupo","FABRIMA13","Grupo_Sort",1,"Maquina","FABR13_B","Maq_Sort",2),
+    ROW("Area","PSD","Area_Sort",1,"Setor","FABRIMA13","Setor_Sort",2,"Grupo","FABRIMA13","Grupo_Sort",1,"Maquina","FABR13_C","Maq_Sort",3),
+    ROW("Area","PSD","Area_Sort",1,"Setor","FABRIMA13","Setor_Sort",2,"Grupo","FABRIMA13","Grupo_Sort",1,"Maquina","FABR13_D","Maq_Sort",4),
+
+    -- PSD - FABRIMA24  (unidades; total 'pai' do BD ignorado, usamos filhos)
+    ROW("Area","PSD","Area_Sort",1,"Setor","FABRIMA24","Setor_Sort",3,"Grupo","FABRIMA24","Grupo_Sort",1,"Maquina","FABR24_A","Maq_Sort",1),
+    ROW("Area","PSD","Area_Sort",1,"Setor","FABRIMA24","Setor_Sort",3,"Grupo","FABRIMA24","Grupo_Sort",1,"Maquina","FABR24_B","Maq_Sort",2),
+    ROW("Area","PSD","Area_Sort",1,"Setor","FABRIMA24","Setor_Sort",3,"Grupo","FABRIMA24","Grupo_Sort",1,"Maquina","FABR24_C","Maq_Sort",3),
+    ROW("Area","PSD","Area_Sort",1,"Setor","FABRIMA24","Setor_Sort",3,"Grupo","FABRIMA24","Grupo_Sort",1,"Maquina","FABR24_D","Maq_Sort",4),
+
+    -- PSD - FABRIMA CX  (valores em CAIXAS; filhos = linhas FABRIMA13 / FABRIMA24 sem sufixo)
+    ROW("Area","PSD","Area_Sort",1,"Setor","FABRIMA CX","Setor_Sort",7,"Grupo","FABRIMA CX","Grupo_Sort",1,"Maquina","FABRIMA13","Maq_Sort",1),
+    ROW("Area","PSD","Area_Sort",1,"Setor","FABRIMA CX","Setor_Sort",7,"Grupo","FABRIMA CX","Grupo_Sort",1,"Maquina","FABRIMA24","Maq_Sort",2),
+
+    -- PSD - CORDS  (total 'pai' do BD ignorado, usamos filhos)
+    ROW("Area","PSD","Area_Sort",1,"Setor","CORDS","Setor_Sort",4,"Grupo","CORDS","Grupo_Sort",1,"Maquina","CORDS_A","Maq_Sort",1),
+    ROW("Area","PSD","Area_Sort",1,"Setor","CORDS","Setor_Sort",4,"Grupo","CORDS","Grupo_Sort",1,"Maquina","CORDS_B","Maq_Sort",2),
+    ROW("Area","PSD","Area_Sort",1,"Setor","CORDS","Setor_Sort",4,"Grupo","CORDS","Grupo_Sort",1,"Maquina","CORDS_C","Maq_Sort",3),
+    ROW("Area","PSD","Area_Sort",1,"Setor","CORDS","Setor_Sort",4,"Grupo","CORDS","Grupo_Sort",1,"Maquina","CORDS_D","Maq_Sort",4),
+    ROW("Area","PSD","Area_Sort",1,"Setor","CORDS","Setor_Sort",4,"Grupo","CORDS","Grupo_Sort",1,"Maquina","CORDS_E","Maq_Sort",5),
+    ROW("Area","PSD","Area_Sort",1,"Setor","CORDS","Setor_Sort",4,"Grupo","CORDS","Grupo_Sort",1,"Maquina","CORDS_F","Maq_Sort",6),
+    ROW("Area","PSD","Area_Sort",1,"Setor","CORDS","Setor_Sort",4,"Grupo","CORDS","Grupo_Sort",1,"Maquina","REUSA_FLOW","Maq_Sort",7),
+
+    -- PSD - Injetoras
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_01","Maq_Sort",1),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_02","Maq_Sort",2),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_03","Maq_Sort",3),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_04","Maq_Sort",4),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_05","Maq_Sort",5),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_06","Maq_Sort",6),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_07","Maq_Sort",7),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_08","Maq_Sort",8),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_09","Maq_Sort",9),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_10","Maq_Sort",10),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_11","Maq_Sort",11),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_12","Maq_Sort",12),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_13","Maq_Sort",13),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_14","Maq_Sort",14),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_15","Maq_Sort",15),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_16","Maq_Sort",16),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_17","Maq_Sort",17),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_18","Maq_Sort",18),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_31","Maq_Sort",19),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Injetoras","Setor_Sort",5,"Grupo","Injetoras","Grupo_Sort",1,"Maquina","INJ_32","Maq_Sort",20),
+
+    -- PSD - Respiradores
+    ROW("Area","PSD","Area_Sort",1,"Setor","Respiradores","Setor_Sort",6,"Grupo","SCAF","Grupo_Sort",1,"Maquina","SCAF1","Maq_Sort",1),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Respiradores","Setor_Sort",6,"Grupo","SCAF","Grupo_Sort",1,"Maquina","SCAF3","Maq_Sort",2),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Respiradores","Setor_Sort",6,"Grupo","SCAF","Grupo_Sort",1,"Maquina","SCAF4","Maq_Sort",3),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Respiradores","Setor_Sort",6,"Grupo","SCAF","Grupo_Sort",1,"Maquina","SCAF5","Maq_Sort",4),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Respiradores","Setor_Sort",6,"Grupo","SELAD_CART","Grupo_Sort",2,"Maquina","SELAD_CART","Maq_Sort",1),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Respiradores","Setor_Sort",6,"Grupo","PREFORMER","Grupo_Sort",3,"Maquina","PREFORMER","Maq_Sort",1),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Respiradores","Setor_Sort",6,"Grupo","MKRESIN","Grupo_Sort",4,"Maquina","MKRESIN","Maq_Sort",1),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Respiradores","Setor_Sort",6,"Grupo","FINISHER","Grupo_Sort",5,"Maquina","FINISHER","Maq_Sort",1),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Respiradores","Setor_Sort",6,"Grupo","AURA","Grupo_Sort",6,"Maquina","AURA","Maq_Sort",1),
+    ROW("Area","PSD","Area_Sort",1,"Setor","Respiradores","Setor_Sort",6,"Grupo","CPC3","Grupo_Sort",7,"Maquina","CPC3","Maq_Sort",1),
+
+    -- CMSD - COBRIDEIRAS
+    ROW("Area","CMSD","Area_Sort",2,"Setor","COBRIDEIRAS","Setor_Sort",1,"Grupo","COBRIDEIRAS","Grupo_Sort",1,"Maquina","COBR5","Maq_Sort",1),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","COBRIDEIRAS","Setor_Sort",1,"Grupo","COBRIDEIRAS","Grupo_Sort",1,"Maquina","COBR8","Maq_Sort",2),
+
+    -- CMSD - CORT
+    ROW("Area","CMSD","Area_Sort",2,"Setor","CORT","Setor_Sort",2,"Grupo","CORT","Grupo_Sort",1,"Maquina","CORT6","Maq_Sort",1),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","CORT","Setor_Sort",2,"Grupo","CORT","Grupo_Sort",1,"Maquina","FITA10","Maq_Sort",2),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","CORT","Setor_Sort",2,"Grupo","CORT","Grupo_Sort",1,"Maquina","FITA11","Maq_Sort",3),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","CORT","Setor_Sort",2,"Grupo","CORT","Grupo_Sort",1,"Maquina","FITA31","Maq_Sort",4),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","CORT","Setor_Sort",2,"Grupo","CORT","Grupo_Sort",1,"Maquina","FITA32","Maq_Sort",5),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","CORT","Setor_Sort",2,"Grupo","CORT","Grupo_Sort",1,"Maquina","PCDFITA10","Maq_Sort",6),
+
+    -- CMSD - LAM
+    ROW("Area","CMSD","Area_Sort",2,"Setor","LAM","Setor_Sort",3,"Grupo","LAM","Grupo_Sort",1,"Maquina","LAM1E2","Maq_Sort",1),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","LAM","Setor_Sort",3,"Grupo","LAM","Grupo_Sort",1,"Maquina","LAM3","Maq_Sort",2),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","LAM","Setor_Sort",3,"Grupo","LAM","Grupo_Sort",1,"Maquina","LAM4","Maq_Sort",3),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","LAM","Setor_Sort",3,"Grupo","LAM","Grupo_Sort",1,"Maquina","LAM5","Maq_Sort",4),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","LAM","Setor_Sort",3,"Grupo","LAM","Grupo_Sort",1,"Maquina","LAM6","Maq_Sort",5),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","LAM","Setor_Sort",3,"Grupo","LAM","Grupo_Sort",1,"Maquina","LAM7","Maq_Sort",6),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","LAM","Setor_Sort",3,"Grupo","LAM","Grupo_Sort",1,"Maquina","LAM8","Maq_Sort",7),
+
+    -- CMSD - Maquinas avulsas (Setor = Grupo = nome)
+    ROW("Area","CMSD","Area_Sort",2,"Setor","IMP4","Setor_Sort",4,"Grupo","IMP4","Grupo_Sort",1,"Maquina","IMP4","Maq_Sort",1),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","EBL","Setor_Sort",5,"Grupo","EBL","Grupo_Sort",1,"Maquina","EBL","Maq_Sort",1),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","HOOK","Setor_Sort",6,"Grupo","HOOK","Grupo_Sort",1,"Maquina","HOOK","Maq_Sort",1),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","LEVELHOOK","Setor_Sort",7,"Grupo","LEVELHOOK","Grupo_Sort",1,"Maquina","LEVELHOOK","Maq_Sort",1),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","NOPP","Setor_Sort",8,"Grupo","NOPP","Grupo_Sort",1,"Maquina","NOPP","Maq_Sort",1),
+    ROW("Area","CMSD","Area_Sort",2,"Setor","TRAT_PAPEL","Setor_Sort",9,"Grupo","TRAT_PAPEL","Grupo_Sort",1,"Maquina","TRAT_PAPEL","Maq_Sort",1),
+
+    -- SPSD - Maquinas avulsas (Setor = Grupo = nome)
+    ROW("Area","SPSD","Area_Sort",3,"Setor","CAPPER","Setor_Sort",1,"Grupo","CAPPER","Grupo_Sort",1,"Maquina","CAPPER","Maq_Sort",1),
+    ROW("Area","SPSD","Area_Sort",3,"Setor","AQUA","Setor_Sort",2,"Grupo","AQUA","Grupo_Sort",1,"Maquina","AQUA","Maq_Sort",1),
+    ROW("Area","SPSD","Area_Sort",3,"Setor","GRINDER","Setor_Sort",3,"Grupo","GRINDER","Grupo_Sort",1,"Maquina","GRINDER","Maq_Sort",1),
+    ROW("Area","SPSD","Area_Sort",3,"Setor","PLISSA","Setor_Sort",4,"Grupo","PLISSA","Grupo_Sort",1,"Maquina","PLISSA","Maq_Sort",1)
+)

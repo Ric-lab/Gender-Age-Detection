@@ -1,0 +1,83 @@
+// ============================================================================
+// MEDIDAS  |  Botao: Modelagem -> Nova Medida  (uma de cada vez)
+// ============================================================================
+
+// ---------- Producao real por turno --------------------------------------
+Real T1 = CALCULATE(SUM('Hora a Hora'[PRODUCAO]), 'Hora a Hora'[Turno] = 1)
+Real T2 = CALCULATE(SUM('Hora a Hora'[PRODUCAO]), 'Hora a Hora'[Turno] = 2)
+Real T3 = CALCULATE(SUM('Hora a Hora'[PRODUCAO]), 'Hora a Hora'[Turno] = 3)
+
+// ---------- Meta por turno ------------------------------------------------
+// A versao com IF(... IN VALUES ...) faz cada linha "sumir" (ficar em branco)
+// quando o turno dela nao esta selecionado no slicer da pagina 2 (grafico),
+// e continua funcionando normal na Matriz (pagina 1).
+Meta T1 =
+IF( 1 IN VALUES('Hora a Hora'[Turno]),
+    CALCULATE(SUM('Hora a Hora'[META]), 'Hora a Hora'[Turno] = 1) )
+Meta T2 =
+IF( 2 IN VALUES('Hora a Hora'[Turno]),
+    CALCULATE(SUM('Hora a Hora'[META]), 'Hora a Hora'[Turno] = 2) )
+Meta T3 =
+IF( 3 IN VALUES('Hora a Hora'[Turno]),
+    CALCULATE(SUM('Hora a Hora'[META]), 'Hora a Hora'[Turno] = 3) )
+
+// ---------- Totais --------------------------------------------------------
+Real Total = SUM('Hora a Hora'[PRODUCAO])
+Meta Total = SUM('Hora a Hora'[META])
+
+// ---------- Percentuais de atingimento ------------------------------------
+% Total = DIVIDE([Real Total], [Meta Total], 0)
+% T1    = DIVIDE([Real T1], [Meta T1], 0)
+% T2    = DIVIDE([Real T2], [Meta T2], 0)
+% T3    = DIVIDE([Real T3], [Meta T3], 0)
+
+// ---------- Medidas genericas (usadas na pagina 2 e na mini-tabela) -------
+// "Meta Linha" foi criada por causa de colisao de nome com a coluna META.
+Real       = SUM('Hora a Hora'[PRODUCAO])
+Meta Linha = SUM('Hora a Hora'[META])
+%          = DIVIDE([Real], [Meta Linha], 0)
+
+// ---------- Grafico de barras: o que faltou pra bater a meta --------------
+// Empilha: Real (verde) na base + Faltante (vermelho) em cima = altura da Meta.
+Faltante = MAX([Meta Linha] - [Real], 0)
+
+// ---------- Linhas de media (retas no periodo, respeitam slicer/turno) ----
+// AVERAGEX sobre (Data_Turno, Turno) tira a media POR TURNO-DIA, nao por linha.
+// O ALLSELECTED(...) no fim "desliga" o filtro de dia que o eixo do grafico
+// impoe, deixando a linha reta no periodo mas ainda como serie real (com tooltip).
+Meta Media =
+CALCULATE(
+    AVERAGEX(
+        SUMMARIZE(ALLSELECTED('Hora a Hora'), 'Hora a Hora'[Data_Turno], 'Hora a Hora'[Turno]),
+        CALCULATE(SUM('Hora a Hora'[META]))
+    ),
+    ALLSELECTED('Hora a Hora'[Data_Turno])
+)
+
+Producao Media =
+CALCULATE(
+    AVERAGEX(
+        SUMMARIZE(ALLSELECTED('Hora a Hora'), 'Hora a Hora'[Data_Turno], 'Hora a Hora'[Turno]),
+        CALCULATE(SUM('Hora a Hora'[PRODUCAO]))
+    ),
+    ALLSELECTED('Hora a Hora'[Data_Turno])
+)
+
+// ---------- Cores para formatacao condicional (Cor de fundo / Cor de dados)
+// Aplicar em cada coluna via "Campo de valor". Mudar faixa = editar aqui 1x.
+//   <= 0,5  vermelho ; <= 0,75 amarelo ; senao verde
+Cor T1 =
+VAR p = [% T1]
+RETURN SWITCH(TRUE(), p <= 0.5, "#F8696B", p <= 0.75, "#FFEB84", "#63BE7B")
+
+Cor T2 =
+VAR p = [% T2]
+RETURN SWITCH(TRUE(), p <= 0.5, "#F8696B", p <= 0.75, "#FFEB84", "#63BE7B")
+
+Cor T3 =
+VAR p = [% T3]
+RETURN SWITCH(TRUE(), p <= 0.5, "#F8696B", p <= 0.75, "#FFEB84", "#63BE7B")
+
+Cor Total =
+VAR p = [% Total]
+RETURN SWITCH(TRUE(), p <= 0.5, "#F8696B", p <= 0.75, "#FFEB84", "#63BE7B")
